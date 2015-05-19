@@ -1,0 +1,8 @@
+user
+role
+
+wikis
+title
+description
+private?
+collaborators (array of users)
