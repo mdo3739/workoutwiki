@@ -1,7 +1,7 @@
 user = User.new(
 	name: 		"Mike Deezy",
 	email: 		"admin@example.com",
-	password: "hellworld",
+	password: "helloworld",
 	role: 		"admin"
 )
 user.skip_confirmation!
@@ -10,14 +10,14 @@ user.save!
 User.create!(
 	name: 				"Premium",
 	email: 				"moderator@example.com",
-	password: 		"hellworld",
+	password: 		"helloworld",
 	role: 				"premium",
 	confirmed_at: Faker::Time.backward(2)
 )
 User.create!(
 	name: 				"Standard",
 	email: 				"member@example.com",
-	password: 		"hellworld",
+	password: 		"helloworld",
 	role: 				"standard",
 	confirmed_at: Faker::Time.backward(3)
 )
