@@ -6,6 +6,7 @@ gem 'devise'          # user authentication
 gem 'figaro', '1.0'   # handles sensitive data
 gem 'pundit'          # authorization
 gem 'puma'            # web server that allows multiple threads
+gem 'redcarpet'       # enables markdown language
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
