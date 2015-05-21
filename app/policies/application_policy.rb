@@ -11,7 +11,7 @@ class ApplicationPolicy
   end
 
   def show?
-    index?
+    record.private == false || record.user == user || user.role == 'admin'
   end
 
   def create?
@@ -23,15 +23,15 @@ class ApplicationPolicy
   end
 
   def update?
-    create?
+    create? && show?
   end
 
   def edit?
-    create?
+    update?
   end
 
   def destroy?
-    create?
+    update?
   end
 
   def scope
