@@ -32,9 +32,12 @@
   </div>
 <% end %>
 
-<% if current_user.role == 'premium' || current_user.role == 'admin' %>
-  <h3>Switch to standard account</h3>
+<% if current_user.role == 'premium' %>
+  <h3>Switch to Standard Account</h3>
   <%= button_to "Downgrade", downgrade_path, method: :patch, data: {confirm: "This will make all of your private wikis public. Do you wish to continue?"} %>
+<% elsif current_user.role == 'standard' %>
+  <h3>Upgrade to Premium Account</h3>
+  <%= button_to "Upgrade", new_charge_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <h3>Cancel my account</h3>

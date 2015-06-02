@@ -8,6 +8,7 @@ gem 'pundit'          # authorization
 gem 'puma'            # web server that allows multiple threads
 gem 'redcarpet'       # enables markdown language
 gem 'stripe'          # authorizes credit card information
+gem 'haml'            # HTML abstract markup language
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

@@ -1,0 +1,4 @@
+%h1 Payment
+= form_tag charges_path
+  %h4 Click the button!
+  %script { class: 'stripe-button', src: 'https://checkout.stripe.com/checkout.js', data_key: '#{@stripe_btn_data[:key]}', data_amount: #{@stripe_btn_data[:amount]}, data_description: '#{@stripe_btn_data[:description]'}

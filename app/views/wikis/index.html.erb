@@ -1,5 +1,0 @@
-<h1>Wikis index</h1>
-
-<% @wikis.each do |wiki| %>
-	<p><%= link_to wiki.title, wiki_path(wiki) %> <%= link_to "Delete", wiki_path(wiki), method: :delete %></p>
-<% end %>
