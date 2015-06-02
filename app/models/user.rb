@@ -7,8 +7,4 @@ class User < ActiveRecord::Base
   has_many :wikis
   has_many :collaborators
   has_many :wikis, through: :collaborators
-
-  def my_wikis
-		#SELECT "wikis".* FROM "wikis" WHERE "wikis"."user_id" = ?  [["user_id", 1]]
-	end
 end
