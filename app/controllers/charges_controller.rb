@@ -34,9 +34,3 @@ class ChargesController < ApplicationController
   	redirect_to new_charge_path
   end
 end
-
-class Amount
-	def self.default
-		15_00
-	end
-end
