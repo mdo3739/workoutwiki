@@ -11,7 +11,7 @@ class ApplicationPolicy
   end
 
   def show?
-    index?
+    record.private == false || record.user == user || record.users.include?(user)
   end
 
   def create?
@@ -23,15 +23,15 @@ class ApplicationPolicy
   end
 
   def update?
-    create?
+    show?
   end
 
   def edit?
-    create?
+    show?
   end
 
   def destroy?
-    create?
+    show?
   end
 
   def scope
