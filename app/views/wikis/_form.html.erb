@@ -16,7 +16,7 @@
 		<%= f.label :body %>
 		<%= f.text_area :body, class: 'form-control', placeholder: 'And how do we do it?' %>
 	</div>
-	<% if current_user.role == 'premium' || 'admin' %>
+	<% if current_user.role == 'premium' || current_user.role == 'admin' %>
 		<div class='form-group'>
 			<%= f.check_box :private %> Private?
 		</div>

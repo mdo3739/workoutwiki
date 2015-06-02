@@ -32,7 +32,7 @@
   </div>
 <% end %>
 
-<% if current_user.role == 'premium' || 'admin' %>
+<% if current_user.role == 'premium' || current_user.role == 'admin' %>
   <h3>Switch to standard account</h3>
   <%= button_to "Downgrade", downgrade_path, method: :patch, data: {confirm: "This will make all of your private wikis public. Do you wish to continue?"} %>
 <% end %>

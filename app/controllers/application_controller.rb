@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   rescue_from Pundit::NotAuthorizedError do |exception|
-  	redirect_to wikis_path, alert: exception.message
+  	redirect_to wikis_path, alert: "Nope. Can't go there!"
   end
 end

@@ -11,7 +11,7 @@ class ApplicationPolicy
   end
 
   def show?
-    record.private == false || record.user == user || user.role == 'admin'
+    record.private == false || record.user == user || record.users.include?(user) || user.role == 'admin'
   end
 
   def create?

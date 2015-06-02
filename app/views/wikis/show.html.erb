@@ -4,3 +4,10 @@
 <p><%= markdown(@wiki.body) %></p>
 <%= link_to "edit", edit_wiki_path(@wiki) %>
 <%= link_to "delete", wiki_path(@wiki), method: :delete %>
+
+<p>
+	Collaborators: <%= @wiki.user.name %>
+	<% @wiki.users.each do |user| %>
+		<%= ", #{user.name}" %>
+	<% end %>
+</p>
