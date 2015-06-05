@@ -1,0 +1,11 @@
+%h1= @wiki.title
+%h6 Created by: #{@wiki.user.name}
+%p Private? #{@wiki.private}
+%p= markdown(@wiki.body)
+= link_to "edit", edit_wiki_path(@wiki)
+= link_to "delete", wiki_path(@wiki), method: :delete
+
+%p
+  Collaborators: #{@wiki.user.name}
+  - @wiki.users.each do |user|
+    =", #{user.name}"

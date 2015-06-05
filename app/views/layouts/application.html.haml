@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title Workoutwiki
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1'}
+  %body
+    .container
+      %ul.nav.nav-pills
+        %li= link_to "Home", root_path
+        %li= link_to "index", wikis_path
+        %li= link_to "new", new_wiki_path
+        - if current_user
+          .pull-right.dropdown
+            %button.btn.btn-default.dropdown-toggle#dropdownMenu1{ type: 'button', "data-toggle" => 'dropdown', "aria-expanded" => 'true'}
+              = current_user.name
+              %span.caret
+            %ul.dropdown-menu{ role: 'menu', "aria-labelledby" => 'dropdownMenu1'}
+              %li{role: 'presentation'}
+                = link_to "Sign Out", destroy_user_session_path, method: :delete
+              %li{role: 'presentation'}
+                = link_to "Edit Account", edit_user_registration_path(current_user)
+      #flash-container
+        - if flash[:notice]
+          #flash-notice.alert.alert-success
+            %button.close{"data-dismiss" => "alert", :type => "button"} ×
+            = flash[:notice]
+        - elsif flash[:alert]
+          .alert.alert-warning
+            %button.close{type: 'button', "data-dismiss" => 'alert'} ×
+            = flash[:alert]
+        - elsif flash[:error]
+          .alert.alert-danger
+            %button.close{type: 'button', "data-dismiss" => 'alert'} ×
+            = flash[:error]
+      = yield

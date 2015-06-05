@@ -1,9 +1,0 @@
-<h1>Wikis#edit</h1>
-
-<%= render partial: 'form', locals: {wiki: @wiki} %>
-
-Current Collaborators: 
-<% @wiki.collaborators.each do |col| %>
-	<br><%= col.user.name %>
-<% end %>
-<%= link_to "Add Collaborators", new_wiki_collaborator_path(@wiki) %>

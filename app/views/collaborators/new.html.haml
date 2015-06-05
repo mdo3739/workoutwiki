@@ -1,0 +1,12 @@
+
+%h1 Collaborators
+= form_for [@wiki, @collab] do |f|
+  .form-group
+    = f.label :email
+    = f.text_field :email, class: 'form-control'
+  = f.submit "Add", class: 'btn btn-success'
+Current Collaborators:
+- @wiki.collaborators.each do |col|
+  %br
+  = link_to col.user.name, [@wiki, col], method: :delete
+%p= link_to "Back", edit_wiki_path(@wiki)

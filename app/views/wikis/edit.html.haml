@@ -1,0 +1,6 @@
+%h1 Edit Wiki
+= render partial: 'form', locals: {wiki: @wiki}
+Current Collaborators:
+- @wiki.collaborators.each do |col|
+  %br= col.user.name
+= link_to "Add Collaborators", new_wiki_collaborator_path(@wiki)
