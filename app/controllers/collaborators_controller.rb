@@ -1,11 +1,11 @@
 class CollaboratorsController < ApplicationController
   def new
   	@collab = Collaborator.new
-  	@wiki = Wiki.find(params[:wiki_id])
+  	@wiki = Wiki.friendly.find(params[:wiki_id])
   end
 
   def create
-  	@wiki = Wiki.find(params[:wiki_id])
+  	@wiki = Wiki.friendly.find(params[:wiki_id])
   	@collab = @wiki.collaborators.build(collab_params)
   	if @collab.user = User.find_by(email: @collab.email)
   	else
@@ -22,7 +22,7 @@ class CollaboratorsController < ApplicationController
   end
 
   def destroy
-  	@collab = Collaborator.find(params[:id])
+  	@collab = Collaborator.friendly.find(params[:id])
   	if @collab.destroy
   		flash[:notice] = "Collaborator removed"
   		redirect_to new_wiki_collaborator_path
