@@ -9,6 +9,7 @@ gem 'puma'            # web server that allows multiple threads
 gem 'redcarpet'       # enables markdown language
 gem 'stripe'          # authorizes credit card information
 gem 'friendly_id', '~> 5.1.0'
+gem 'epic-editor-rails', '~> 0.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
