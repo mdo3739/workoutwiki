@@ -3,21 +3,70 @@
     <h1>Workout Wiki</h1>
     <p>This is a place where people come together and share their own creative workouts.</p>
     <p>
-        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
-        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+        Sign In
+      </button> or
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+        Sign Up
+      </button> today!
+      <!-- Sign in Modal -->
+      <div class="modal fade" id="signInModal" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title" id="myModalLabel">Sign In</h2>
+            </div>
+            <div class="modal-body">
+              <%= render 'devise/sessions/new' %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign up Modal -->
+      <div class="modal fade" id="signUpModal" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title" id="myModalLabel">Sign Up</h2>
+            </div>
+            <div class="modal-body">
+              <%= render 'devise/registrations/new' %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </p>
   </div>
 </div>
 <div class='row'>
+  <div class='col-md-10 col-md-offset-1'>
+    <h4>
+      Is your gym routine getting old? Don't have money for a personal trainer? Well Look no further.  Workout Wiki is the collection of knowledge of work-out enthusiasts like yourself.  Here we post our specific know-hows of different excercises classified by body parts, the 'don'ts' of famous excersices, and healthy alternatives.
+    <h4>
+  </div>
+</div>
+<div class='row'>
   <div class='col-md-4'>
-    <h2></h2>
-    <p>Is your gym routine getting old? Don't have money for a personal trainer? Well Look no further.  Workout Wiki is the collection of knowledge of work-out enthusiasts like yourself.  Here we post our specific know-hows of different excercises classified by body parts, the 'don'ts' of famous excersices, and healthy alternatives. Sign up for a free account today</p>
+    <h2>Sign up for a free account</h2>
+    <p>With a standard membership, you will be able to create and edit any public wikis</p>
   </div>
   <div class='col-md-4'>
     <h2>Upgrade to premium!</h2>
-    <p>If you upgrade to a premium account
+    <p>If you upgrade to a premium account, you will have the power to create your own private wikis, and can choose the people you want to see and contribute to it.
   </div>
   <div class='col-md-4'>
-
+    <h2>Browse as a guest</h2>
+    <p>
+      No need to even sign up to look around.  You are welcome so see the content we have so far, and can sign up anytime you like if you have anything you want to share.
+    </p>
   </div>
 </div>
