@@ -1,5 +1,23 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Sign In", new_user_session_path %>
-<%= link_to "sign out", destroy_user_session_path, method: :delete %>
+<div class="row">
+  <div class="jumbotron">
+    <h1>Workout Wiki</h1>
+    <p>This is a place where people come together and share their own creative workouts.</p>
+    <p>
+        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
+        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+    </p>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-4'>
+    <h2></h2>
+    <p>Is your gym routine getting old? Don't have money for a personal trainer? Well Look no further.  Workout Wiki is the collection of knowledge of work-out enthusiasts like yourself.  Here we post our specific know-hows of different excercises classified by body parts, the 'don'ts' of famous excersices, and healthy alternatives. Sign up for a free account today</p>
+  </div>
+  <div class='col-md-4'>
+    <h2>Upgrade to premium!</h2>
+    <p>If you upgrade to a premium account
+  </div>
+  <div class='col-md-4'>
+
+  </div>
+</div>
