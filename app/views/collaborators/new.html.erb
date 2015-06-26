@@ -7,7 +7,7 @@
 	</div>
 	<%= f.submit "Add", class: 'btn btn-success' %>
 <% end %>
-Current Collaborators: 
+Current Collaborators (click to remove): 
 <% @wiki.collaborators.each do |col| %>
 	<br><%= link_to col.user.name, [@wiki, col], method: :delete %>
 <% end %>

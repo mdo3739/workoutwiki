@@ -1,7 +1,9 @@
 <h1><%= @wiki.title %></h1>
 <h6>Created by: <%= @wiki.user.name %></h6>
-<p>Private? <%= @wiki.private %>
-<p><%= markdown(@wiki.body) %></p>
+<h4><%= @wiki.summary %></h4>
+<p>Public: <%= !@wiki.private %>
+<h5>Steps:</h5>
+<p><%= markdown(@wiki.body).html_safe %></p>
 <%= link_to "edit", edit_wiki_path(@wiki) %>
 <%= link_to "delete", wiki_path(@wiki), method: :delete %>
 

@@ -22,7 +22,7 @@ class CollaboratorsController < ApplicationController
   end
 
   def destroy
-  	@collab = Collaborator.friendly.find(params[:id])
+  	@collab = Collaborator.find(params[:id])
   	if @collab.destroy
   		flash[:notice] = "Collaborator removed"
   		redirect_to new_wiki_collaborator_path

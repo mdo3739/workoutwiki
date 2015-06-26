@@ -33,9 +33,10 @@ end
 
 70.times do
 	Wiki.create!(
-		title: 	Faker::Company.name,
-		body: 	Faker::Lorem.paragraph,
-		user: 	User.all.sample
+		title: 		Faker::Company.name,
+		summary: 	Faker::Lorem.paragraph,
+		user: 		User.all.sample,
+		body: 		"1. #{Faker::Lorem.sentence}<br/><br/>2. #{Faker::Lorem.sentence}<br/><br/>3. #{Faker::Lorem.sentence}"
 	)
 end
 
